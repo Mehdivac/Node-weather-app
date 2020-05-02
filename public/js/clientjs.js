@@ -20,7 +20,8 @@ weatherForm.addEventListener('submit', (e) =>{
             messageTwo.textContent ="";
         } else{
             messageOne.textContent = data.location;
-            messageTwo.textContent = "The forecast is " + data.forecast.weather.fontcolor("red") + ". It is currently " + data.forecast.temp.fontcolor("yellow") + "° and it feels like " + data.forecast.feelslike + "°.";
+            const forecastText = data.forecast.weather;
+            messageTwo.textContent = "The forecast is " + forecastText + ". It is currently " + data.forecast.temp + "° and it feels like " + data.forecast.feelslike + "°.";
         }
         
     })

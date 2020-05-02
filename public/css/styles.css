@@ -53,9 +53,9 @@ button {
     padding: 8px;
 }
 
-#messageOne {
+#message-1 {
     color: orangered;
 }
-#messageTwo {
-    color: blue;
+#message-2 {
+    color:rgb(51, 170, 119);
 }
