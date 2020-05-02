@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast')
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for Express config
 const publicDir = path.join(__dirname, '../public');
@@ -23,14 +24,14 @@ app.use(express.static(publicDir));
 app.get('', (req,res) => {
     res.render('index', {
         title: 'Acceuil',
-        name: "Mehdi"
+        name: "Mehdivac"
     });
 })
 
 app.get('/about', (req,res) => {
     res.render('about', {
         title: 'About us',
-        name: "Broken Lords"
+        name: "Mehdivac"
     });
 })
 
@@ -38,7 +39,7 @@ app.get('/help', (req,res) => {
     res.render('help', {
         title: 'Need any help?',
         helpText: "Here the instructions",
-        name: 'Mehdi'
+        name: 'Mehdivac'
     });
 })
 
@@ -95,7 +96,7 @@ app.get('/help/*', (req,res) => {
     res.render('error', {
         title: "404",
         message: "Help article not found",
-        name: "Mehdi"
+        name: "Mehdivac"
     });
 })
 
@@ -103,10 +104,10 @@ app.get('*', (req,res) => {
     res.render('error', {
         title: '404',
         message: "Page not found",
-        name: "Mehdi"
+        name: "Mehdivac"
     });
 })
 
-app.listen(3000, () => {
-    console.log("Server on port 3000");
+app.listen(port, () => {
+    console.log("Server on port " + port);
 });
